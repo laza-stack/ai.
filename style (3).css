@@ -1,0 +1,385 @@
+/* =========================
+   DESIGN SYSTEM
+========================= */
+:root {
+    --bg-main: #030712;
+    --bg-card: rgba(17, 24, 39, 0.7);
+
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(99, 102, 241, 0.4);
+
+    --text-main: #F9FAFB;
+    --text-muted: #9CA3AF;
+
+    --primary: #6366F1;
+    --primary-glow: rgba(99, 102, 241, 0.15);
+
+    --font: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* =========================
+   BACKGROUND EFFECT
+========================= */
+.glow-bg {
+    position: fixed;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(99,102,241,0.15), transparent 70%);
+    z-index: -1;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(3, 7, 18, 0.8);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--text-main);
+    background: transparent;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+/* =========================
+   LANGUAGE SWITCHER
+========================= */
+.lang-selector {
+    display: flex;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border-color);
+    padding: 2px;
+    border-radius: 10px;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.lang-btn.active {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    padding: 150px 0 60px;
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.hero.shrink {
+    padding: 60px 0 40px;
+}
+
+.hero-title {
+    font-size: 54px;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.hero.shrink .hero-title {
+    font-size: 38px;
+}
+
+.hero-title span {
+    background: linear-gradient(135deg, #818CF8, #C084FC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 19px;
+    color: var(--text-muted);
+    max-width: 650px;
+    margin: 20px auto 40px;
+}
+
+/* =========================
+   SEARCH
+========================= */
+.search-wrapper {
+    position: relative;
+    max-width: 650px;
+    margin: 0 auto 40px;
+}
+
+.search-wrapper input {
+    width: 100%;
+    padding: 18px 18px 18px 56px;
+    background: rgba(17,24,39,0.6);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    color: white;
+}
+
+.search-wrapper input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* =========================
+   CATEGORIES
+========================= */
+.categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    max-height: 140px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.cat-btn {
+    padding: 10px 18px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.cat-btn.active,
+.cat-btn:hover {
+    background: white;
+    color: #000;
+}
+
+/* =========================
+   GRID
+========================= */
+.main-content {
+    padding-bottom: 120px;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 30px;
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 28px;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--border-hover);
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+/* =========================
+   FOOTER CARD
+========================= */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.btn-card {
+    flex: 1;
+    text-align: center;
+    background: rgba(255,255,255,0.03);
+    color: white;
+}
+
+/* =========================
+   BADGES
+========================= */
+.badge {
+    font-size: 11px;
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+.price-free { color: #10B981; }
+.price-freemium { color: #3B82F6; }
+.price-paid { color: #EF4444; }
+
+/* =========================
+   LOADING / STATES
+========================= */
+.loading-state,
+.error-state,
+.no-results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    color: var(--text-muted);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    .hero-title {
+        font-size: 38px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .navbar-content {
+        flex-direction: column;
+        height: auto;
+        padding: 14px 0;
+    }
+
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 22px;
+    }
+}
+
+.install-popup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.install-popup.hidden{
+    display:none;
+}
+
+.install-box{
+    background:#0b1220;
+    padding:24px;
+    border-radius:16px;
+    border:1px solid rgba(255,255,255,0.1);
+    text-align:center;
+    max-width:320px;
+}
+
+.install-actions{
+    display:flex;
+    gap:10px;
+    margin-top:16px;
+}
+
+.install-actions button{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+#installBtn{
+    background:#6366F1;
+    color:white;
+}
+
+#closeInstall{
+    background:rgba(255,255,255,0.1);
+    color:white;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIFinder - Next-Gen AI Tools Ecosystem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#6366F1">
+</head>
+<body>
+
+    <!-- Arrière-plan lumineux (Effet de flou esthétique) -->
+    <div class="glow-bg"></div>
+
+    <!-- Header Élite -->
+    <header class="navbar">
+        <div class="container navbar-content">
+            <a href="#" class="logo">AI<span>Finder</span></a>
+            
+            <div class="navbar-actions">
+                <div class="lang-selector">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero haut de gamme -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="announcement-badge" id="announcement">✨ Discover the future of automation</div>
+            <h1 class="hero-title" id="heroTitle">Find the perfect <span>AI tool</span> for your needs</h1>
+            <p class="hero-subtitle" id="heroSubtitle">The ultimate curated directory of artificial intelligence tools updated daily.</p>
+            
+            <!-- Barre de recherche stylisée -->
+            <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Search by name, keyword, category...">
+            </div>
+
+            <!-- Filtres de Catégories sous forme de puces modernes -->
+<div class="categories-container" id="categoryFilters">
+
+<button class="cat-btn active" data-category="all" id="catAll">All Tools</button>
+
+<button class="cat-btn" data-category="3D">3D</button>
+<button class="cat-btn" data-category="Advertising">Advertising</button>
+<button class="cat-btn" data-category="Animation">Animation</button>
+<button class="cat-btn" data-category="API">API</button>
+<button class="cat-btn" data-category="Art">Art</button>
+<button class="cat-btn" data-category="Audio">Audio</button>
+<button class="cat-btn" data-category="Automation">Automation</button>
+<button class="cat-btn" data-category="Avatar">Avatar</button>
+<button class="cat-btn" data-category="Blogging">Blogging</button>
+<button class="cat-btn" data-category="Business">Business</button>
+<button class="cat-btn" data-category="Chatbot">Chatbot</button>
+<button class="cat-btn" data-category="Code">Code</button>
+<button class="cat-btn" data-category="Copywriting">Copywriting</button>
+<button class="cat-btn" data-category="CRM">CRM</button>
+<button class="cat-btn" data-category="Customer Support">Customer Support</button>
+<button class="cat-btn" data-category="Data Analysis">Data Analysis</button>
+<button class="cat-btn" data-category="Design">Design</button>
+<button class="cat-btn" data-category="Developer Tools">Developer Tools</button>
+<button class="cat-btn" data-category="Education">Education</button>
+<button class="cat-btn" data-category="Email Marketing">Email Marketing</button>
+<button class="cat-btn" data-category="E-commerce">E-commerce</button>
+<button class="cat-btn" data-category="Entertainment">Entertainment</button>
+<button class="cat-btn" data-category="Fashion">Fashion</button>
+<button class="cat-btn" data-category="Finance">Finance</button>
+<button class="cat-btn" data-category="Gaming">Gaming</button>
+<button class="cat-btn" data-category="Generative AI">Generative AI</button>
+<button class="cat-btn" data-category="Graphic Design">Graphic Design</button>
+<button class="cat-btn" data-category="Health">Health</button>
+<button class="cat-btn" data-category="HR">HR</button>
+<button class="cat-btn" data-category="Image">Image</button>
+<button class="cat-btn" data-category="Interior Design">Interior Design</button>
+<button class="cat-btn" data-category="Legal">Legal</button>
+<button class="cat-btn" data-category="Logo Design">Logo Design</button>
+<button class="cat-btn" data-category="Machine Learning">Machine Learning</button>
+<button class="cat-btn" data-category="Marketing">Marketing</button>
+<button class="cat-btn" data-category="Meeting Assistant">Meeting Assistant</button>
+<button class="cat-btn" data-category="Mobile App">Mobile App</button>
+<button class="cat-btn" data-category="Motion Graphics">Motion Graphics</button>
+<button class="cat-btn" data-category="Music">Music</button>
+<button class="cat-btn" data-category="News">News</button>
+<button class="cat-btn" data-category="No-Code">No-Code</button>
+<button class="cat-btn" data-category="Open Source">Open Source</button>
+<button class="cat-btn" data-category="PDF">PDF</button>
+<button class="cat-btn" data-category="Photo Editing">Photo Editing</button>
+<button class="cat-btn" data-category="Presentation">Presentation</button>
+<button class="cat-btn" data-category="Productivity">Productivity</button>
+<button class="cat-btn" data-category="Programming">Programming</button>
+<button class="cat-btn" data-category="Prompt Engineering">Prompt Engineering</button>
+<button class="cat-btn" data-category="Real Estate">Real Estate</button>
+<button class="cat-btn" data-category="Research">Research</button>
+<button class="cat-btn" data-category="Resume Builder">Resume Builder</button>
+<button class="cat-btn" data-category="Robotics">Robotics</button>
+<button class="cat-btn" data-category="Sales">Sales</button>
+<button class="cat-btn" data-category="Scheduling">Scheduling</button>
+<button class="cat-btn" data-category="SEO">SEO</button>
+<button class="cat-btn" data-category="Social Media">Social Media</button>
+<button class="cat-btn" data-category="Speech to Text">Speech to Text</button>
+<button class="cat-btn" data-category="Startup">Startup</button>
+<button class="cat-btn" data-category="Storytelling">Storytelling</button>
+<button class="cat-btn" data-category="Text to Speech">Text to Speech</button>
+<button class="cat-btn" data-category="Translation">Translation</button>
+<button class="cat-btn" data-category="UI/UX">UI/UX</button>
+<button class="cat-btn" data-category="Video">Video</button>
+<button class="cat-btn" data-category="Video Editing">Video Editing</button>
+<button class="cat-btn" data-category="Virtual Assistant">Virtual Assistant</button>
+<button class="cat-btn" data-category="Voice">Voice</button>
+<button class="cat-btn" data-category="Web Design">Web Design</button>
+<button class="cat-btn" data-category="Writing">Writing</button>
+
+</div>
+        </div>
+    </section>
+
+    <!-- Grille de Contenu principale -->
+    <main class="container main-content">
+        <div id="toolsGrid" class="tools-grid">
+<div class="loading-state" id="loadingState">Loading the ecosystem...</div>
+        </div>
+    </main>
+
+    <script type="module" src="app.js"></script>
+    
+    <div id="installPopup" class="install-popup hidden">
+    <div class="install-box">
+        <h3>Installer AIFinder</h3>
+        <p>Ajouter un raccourci sur votre écran d’accueil pour un accès rapide.</p>
+
+        <div class="install-actions">
+            <button id="installBtn">Installer</button>
+            <button id="closeInstall">Plus tard</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
