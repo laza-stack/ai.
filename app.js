@@ -180,7 +180,7 @@ function renderTools() {
                     <p class="card-description">${descriptionText}</p>
                 </div>
                 <div class="card-footer">
-                    <button class="upvote-btn">🔺 <span>${tool.votes || 0}</span></button>
+                    <div></div>
                     <a href="${tool.url}" target="_blank" rel="noopener noreferrer" class="btn btn-card">
                         ${t.visitBtn}
                     </a>
