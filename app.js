@@ -75,10 +75,7 @@ if(submitBtn){
     document.getElementById('heroSubtitle').innerText = t.heroSubtitle;
     searchInput.placeholder = t.searchPlaceholder;
     document.getElementById('catAll').innerText = t.catAll;
-    document.getElementById('catMarketing').innerText = t.catMarketing;
-    document.getElementById('catVideo').innerText = t.catVideo;
-    document.getElementById('catCoding').innerText = t.catCoding;
-    document.getElementById('catDesign').innerText = t.catDesign;
+    
 }
 
 async function fetchTools() {
@@ -115,19 +112,53 @@ function renderTools() {
     const query = searchInput.value.toLowerCase();
     const t = translations[currentLang];
     
-    const filteredTools = toolsData.filter(tool => {
-        const desc = currentLang === "fr" ? (tool.description_fr || tool.description) : (tool.description_en || tool.description);
-        const matchesSearch = tool.name.toLowerCase().includes(query) || desc.toLowerCase().includes(query);
-        const matchesCategory = activeCategory === "all" || tool.category === activeCategory;
-        return matchesSearch && matchesCategory;
-    });
+    const scoredTools = toolsData
+    .map(tool => {
+        const desc =
+            currentLang === "fr"
+                ? (tool.description_fr || tool.description || "")
+                : (tool.description_en || tool.description || "");
 
-    if (filteredTools.length === 0) {
+        const name = (tool.name || "").toLowerCase();
+        const description = desc.toLowerCase();
+        const category = (tool.category || "").toLowerCase();
+        const q = query.toLowerCase();
+
+        let score = 0;
+
+        // MATCH EXACT NOM (très fort)
+        if (name === q) score += 100;
+
+        // NOM contient recherche
+        if (name.includes(q)) score += 50;
+
+        // DESCRIPTION contient recherche
+        if (description.includes(q)) score += 20;
+
+        // catégorie match
+        if (category.includes(q)) score += 30;
+
+        // boost si commence par query
+        if (name.startsWith(q)) score += 25;
+
+        return { ...tool, score };
+    })
+    .filter(tool => {
+        const matchesCategory =
+            activeCategory === "all" ||
+            (tool.category && tool.category.toLowerCase().includes(activeCategory.toLowerCase()));
+
+        const matchesSearch = query === "" || tool.score > 0;
+
+        return matchesCategory && matchesSearch;
+    })
+    .sort((a, b) => b.score - a.score);
+    if (scoredTools.length === 0) {
         toolsGrid.innerHTML = `<div class="no-results">${t.noResults}</div>`;
         return;
     }
 
-    toolsGrid.innerHTML = filteredTools.map(tool => {
+    toolsGrid.innerHTML = scoredTools.map(tool => {
         const descriptionText = currentLang === "fr" ? (tool.description_fr || tool.description) : (tool.description_en || tool.description);
         
         // Détermination dynamique de la classe CSS du prix
